@@ -57,8 +57,8 @@ class _KlimaticState extends State<Klimatic> {
         children: <Widget>[
           new Center(
             child: new Image.asset('images/night.jpg',
-            width: 420.0,
-            height: 900.0,
+            width: 500.0,
+            height: 1200.0,
             fit: BoxFit.fill,
             ),
           ),
@@ -79,10 +79,11 @@ class _KlimaticState extends State<Klimatic> {
             ),
           ),
           //Contains weather Data
-          new Container(
-            margin: const EdgeInsets.fromLTRB(30.0, 290.0, 0.0, 0.0),
-            child: updateTempWidget(_cityEntered)
-          )
+          updateTempWidget(_cityEntered)
+          // new Container(
+          //   margin: const EdgeInsets.fromLTRB(30.0, 290.0, 0.0, 0.0),
+          //   child: updateTempWidget(_cityEntered)
+          // )
         ],
       ),
     );
@@ -104,7 +105,9 @@ Widget updateTempWidget(String city){
       if (snapshot.hasData){
         Map content = snapshot.data;
         return new Container(
+          margin: const EdgeInsets.fromLTRB(30.0, 250.0, 0.0, 0.0),
           child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new ListTile(
                 title: new Text(content['main']['temp'].toString()+" C",
@@ -146,7 +149,8 @@ class ChangeCity extends StatelessWidget {
             children: <Widget>[
               new Center(
                 child: new Image.asset("images/totoro_enter.jpg",
-                width: 410.0,
+                width: 1200.0,
+                height: 1200.0,
                 fit: BoxFit.fill,
                 ),
               ),
