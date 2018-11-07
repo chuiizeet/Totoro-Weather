@@ -1,4 +1,4 @@
-# klimatic
+# Totoro Weather
 
 A new Flutter project.
 
